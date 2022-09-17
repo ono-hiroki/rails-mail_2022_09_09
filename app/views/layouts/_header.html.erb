@@ -1,48 +1,4 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container-fluid">
-    <%= link_to "sample app", root_path, id: "logo" %>
-    <nav>
-
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Help", help_path %></li>
-
-
-        <% if logged_in? %>
-          <li>こんちくは</li>
-          <li><%= link_to "Users", '#' %></li>
-          <li>
-            <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-             Navbar<span class="caret"></span>
-            </a>
-            <script type="text/javascript" charset="utf-8">
-                $(function(){
-                    $(".test02").css("color","green")
-                });
-            </script>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                <li class="nav-item"><%= link_to "Profile", current_user %></li>
-                <li class="nav-item"><%= link_to "Settings", '#' %></li>
-                <li class="nav-item" class="divider"></li>
-                <li>
-                  <%= link_to "Log out", logout_path, method: :delete %>
-                </li>
-              </ul>
-            </div>
-          </li>
-
-
-        <% else %>
-          <li><%= link_to "Log in", login_path %></li>
-        <% end %>
-
-
-      </ul>
-    </nav>
-  </div>
-</header>
+<heeader>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
@@ -51,26 +7,23 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
+        <li><%= link_to "Home", root_path, class: "nav-link" %></li>
+        <li><%= link_to "Help", help_path, class: "nav-link" %></li>
+        <% if logged_in? %>
+          <li><%= link_to "Users", '#', class: "nav-link" %></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><%= link_to "Profile", current_user, class: 'dropdown-item' %></li>
+              <li><%= link_to "Settings", '#', class: 'dropdown-item' %></li>
+              <li><%= link_to "Log out", logout_path, method: :delete, class: 'dropdown-item'%></li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to "Log in", login_path %></li>
+        <% end %>
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -79,13 +32,4 @@
     </div>
   </div>
 </nav>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Dropdown button
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-  </ul>
-</div>
+</heeader>
