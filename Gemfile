@@ -48,6 +48,9 @@ gem 'bcrypt'
 gem 'byebug'
 gem 'gravtastic'
 gem 'jquery-rails'
+gem 'faker'
+gem 'will_paginate',           '3.3.1'
+gem 'bootstrap-will_paginate', '1.0.0'
 # gem 'bootstrap', '5.1.2 '
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
