@@ -2,5 +2,5 @@
 import "@hotwired/turbo-rails"
 // NOTE もしかしたら必要ないかも 確認が必要 https://www.sejuku.net/blog/57790
 //= require jquery
-//= require jquery_ujso
+//= require jquery_ujs
 //= require_tree .

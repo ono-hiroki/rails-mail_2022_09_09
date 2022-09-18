@@ -33,3 +33,8 @@
   </div>
 </nav>
 </heeader>
+<% if logged_in? %>
+  <li><%= link_to "Log out", logout_path, method: :delete, class: 'dropdown-item'%></li>
+  <a rel="nofollow" data-method="post" href="/logout">Logout</a>
+  <%= link_to "Logout", "/logout", method: :post%>
+<% end %>
